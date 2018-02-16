@@ -2,4 +2,5 @@
 
 ## Instructions to run
   1. `npm install`
-  2. `npm start` (Server should be running on port 3000)
+  2. `npm start` 
+  3.  Website can be accessed at `localhost:3000`
