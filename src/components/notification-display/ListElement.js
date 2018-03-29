@@ -2,9 +2,12 @@ import React from 'react';
 
 /**
  * props: {
- *  notification content
- *  time notification will be sent
- *  group to be sent to
+ * notification: {
+ *   content,
+ *   group.
+ *   time,
+ *   id
+ * }
  * }
  */
 
