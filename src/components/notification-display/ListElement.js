@@ -3,11 +3,13 @@ import React from 'react';
 /**
  * props: {
  * notification: {
- *   content,
- *   group.
- *   time,
- *   id
- * }
+ *   content [String],
+ *   group [int].
+ *   time [unix time],
+ *   id [int]
+ * },
+ * groups: [Array],
+ * onClick [Function]
  * }
  */
 
