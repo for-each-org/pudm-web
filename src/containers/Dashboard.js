@@ -15,6 +15,10 @@ export default class Dashboard extends Component {
         }
     }
     
+    componentWillMount() {
+        //TODO: fectch data from API and fill state
+    }
+
     onClickNotificationListItem(notif_id) {
         //Populate form with notification details
         this.setState(prev => (
