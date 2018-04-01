@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 export default class NotificationList extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            notifications: props.notifications
+        }
     }
 
     shouldComponentUpdate(nextProps, nextState) {

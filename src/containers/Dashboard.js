@@ -7,10 +7,11 @@ export default class Dashboard extends Component {
             notifications: null,
             groups: null,
             form: {
-                textfield: null,
+                id: null,
+                textfield: "",
                 time: null,
                 group: null,
-                edit: false
+                edit: false //to know whether the notification is new or an old one is being edited
             }
         }
     }
@@ -25,6 +26,7 @@ export default class Dashboard extends Component {
             const notif = this.state.notifications.notif_id;
             {
             form: {
+                id: notif_id,
                 textfield: notif.content,
                 time: notif.time,
                 group: notif.group,
@@ -43,7 +45,8 @@ export default class Dashboard extends Component {
             const notif = this.state.notifications.notif_id;
             {
             form: {
-                textfield: null,
+                id: null,
+                textfield: "",
                 time: null,
                 group: null,
                 edit: false
