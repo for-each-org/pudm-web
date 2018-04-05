@@ -7,7 +7,8 @@ class App extends Component {
     // I suggest using console.log to test onSelect and onClick stuff
     return (
       <div>
-        
+        <components.form.Button display_name='Submit' onClick={()=> {alert("clicked!");}}/>
+        <components.form.TimePicker />
       </div>
     );
   }
