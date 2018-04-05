@@ -3,12 +3,12 @@ import React from 'react';
 /**
  * props: {
  * {
- * time [24 hr time],
+ * date [24 hr time],
  * onChange [Function]
  *}
  */
 
-export default function TimePicker(props) {
+export default function DatePicker(props) {
     return (
         <div>
         </div>
