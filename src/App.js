@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import components from './components';
+import components           from './components';
+import containers           from './containers';
 
 class App extends Component {
   render() {

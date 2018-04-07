@@ -35,7 +35,7 @@ export default class Dashboard extends Component {
         });
     }
 
-    onSubmitForm(form) {
+    onSubmitForm(notif_obj) {
         //TODO : Communicate with server
         
         //TODO : display confirmation of submission of form
