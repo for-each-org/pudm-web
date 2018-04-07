@@ -14,27 +14,15 @@ export default class NotificationEditor extends Component {
     }
     
     onTextFieldChange(event) {
-        this.setState({
-            textfield: event.target.value
-        });
     }
 
     onGroupSelectorChange(event) {
-        this.setState({
-            group: event.taarget.value
-        });
     }
 
     onDatePickerChange(event) {
-        this.setState({
-            date: event.target.value
-        });
     }
 
     onTimePickerChange(event) {
-        this.setState({
-            time: event.target.value
-        });
     }
 
     onSubmit() {
