@@ -4,14 +4,54 @@ export default class NotificationEditor extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: props.id,
-            textfield: props.textfield,
-            time: props.time,
-            group: props.group,
-            edit: props.edit
+            id: props.id, // integer
+            textfield: props.textfield, // ""
+            time: props.time, // "hh:mm:ss"
+            date: props.date, // "yyyy-mm-dd"
+            group: props.group, // index in array of groups
+            edit: props.edit // boolean
         }
     }
     
+    onTextFieldChange(event) {
+        this.setState({
+            textfield: event.target.value
+        });
+    }
+
+    onGroupSelectorChange(event) {
+        this.setState({
+            group: event.target.value
+        });
+    }
+
+    onDatePickerChange(event) {
+        this.setState({
+            date: event.target.value
+        });
+    }
+
+    onTimePickerChange(event) {
+        this.setState({
+            time: event.target.value
+        });
+    }
+
+    onSubmit() {
+        //TODO convert date and time to be stored in a key [time] as UNIX time
+
+        /* create form object that has
+        *form = {
+        *   id: state.id,
+        *   textfield: state.textfield,
+        *   time: (UNIX time)(state.date + state.time),
+        *   group: state.group
+        *}
+        */
+
+        // props.onSubmit(form)
+    }
+
     shouldComponentUpdate(nextProps, nextState) {
         //TODO: Check if old props match current props, if they do, don't update
         //If they don't, see if there is any field in the form that was filled out. 
@@ -20,6 +60,7 @@ export default class NotificationEditor extends Component {
     }
 
     render() {
+        //Will have TextField, TimePicker, DatePicker, GroupSelector, Button
         return (
             <div/>
         )
