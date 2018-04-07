@@ -7,7 +7,6 @@ class App extends Component {
     // I suggest using console.log to test onSelect and onClick stuff
     return (
       <div>
-        
       </div>
     );
   }
