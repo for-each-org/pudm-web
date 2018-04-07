@@ -21,19 +21,19 @@ export default class NotificationEditor extends Component {
 
     onGroupSelectorChange(event) {
         this.setState({
-            group: event.target.value
+            group: event.value
         });
     }
 
     onDatePickerChange(event) {
         this.setState({
-            date: event.target.value
+            date: event.value
         });
     }
 
     onTimePickerChange(event) {
         this.setState({
-            time: event.target.value
+            time: event.value
         });
     }
 
