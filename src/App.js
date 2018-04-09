@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import components from './components';
 
+const groups = [
+    "red", "blue", "green"
+];
+
+var content = "";
+
+
 class App extends Component {
     render() {
         // <components.form.Button/> you can put a component like this between the divs below to display and test it.
@@ -8,7 +15,7 @@ class App extends Component {
         return ( 
             <div>
                 <components.form.TextField/>
-                <component.form.GroupSelector/>
+                <components.form.GroupSelector group_list={groups}/>
             </div>
         );
     }
