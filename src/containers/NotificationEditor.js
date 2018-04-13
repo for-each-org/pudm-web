@@ -16,12 +16,10 @@ export default class NotificationEditor extends Component {
     }
     
     onTextFieldChange(event) {
-        console.log(event.target.value);
         this.setState({textfield: event.target.value});
     }
 
     onGroupSelectorChange(event) {
-        console.log(event.target.value);
         this.setState({group: event.target.value});
     }
 
@@ -55,7 +53,6 @@ export default class NotificationEditor extends Component {
 
     render() {
         //Will have TextField, TimePicker, DatePicker, GroupSelector, Button
-        const grp = ["red", "yellow", "green"];
         return (
             <div>
                 <TextField content={this.state.textfield} updateContent={this.onTextFieldChange.bind(this)}/>
