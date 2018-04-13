@@ -11,13 +11,11 @@ import React from 'react';
  */
 
 export default function GroupSelector(props) {
+    const group_list = props.group_list ? props.group_list : [];
+    const listGroups = group_list.map((group_name, idx) =>
+        <option value={idx}>{group_name}</option>
+    );
     return (
-        <div>
-            <select onChange={props.selectGroup}>
-                    <option value="props.group_list[0]">{props.group_list[0]}</option>
-                    <option value="props.group_list[1]">{props.group_list[1]}</option>
-                    <option value="props.group_list[2]">{props.group_list[2]}</option>
-            </select>
-        </div>
+        <select onChange={props.selectGroup}>{listGroups}</select>
     )
 }
