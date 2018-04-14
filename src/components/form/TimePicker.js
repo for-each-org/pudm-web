@@ -9,12 +9,8 @@ import React from 'react';
  *}
  */
 
-
-
 export default function TimePicker(props) {
-  //TODO display time picker
     return (
-        <div>
-        </div>
+          <input type="time" value={props.time} onChange={props.onChange}/>
     )
 }

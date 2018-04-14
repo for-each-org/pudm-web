@@ -10,7 +10,6 @@ import React from 'react';
 
 export default function DatePicker(props) {
     return (
-        <div>
-        </div>
+          <input type="date" onChange={props.onChange} value={props.date}/>
     )
 }
