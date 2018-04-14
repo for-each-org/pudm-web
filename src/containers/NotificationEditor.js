@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import TextField from '../components/form/Textfield';
+import GroupSelector from '../components/form/GroupSelector';
 
 export default class NotificationEditor extends Component {
     constructor(props) {
@@ -14,9 +16,11 @@ export default class NotificationEditor extends Component {
     }
     
     onTextFieldChange(event) {
+        this.setState({textfield: event.target.value});
     }
 
     onGroupSelectorChange(event) {
+        this.setState({group: event.target.value});
     }
 
     onDatePickerChange(event) {
@@ -50,7 +54,10 @@ export default class NotificationEditor extends Component {
     render() {
         //Will have TextField, TimePicker, DatePicker, GroupSelector, Button
         return (
-            <div/>
+            <div>
+                <TextField content={this.state.textfield} updateContent={this.onTextFieldChange.bind(this)}/>
+                <GroupSelector group_list={grp} selectGroup={this.onGroupSelectorChange.bind(this)}/>
+            </div>
         )
     }
 }
