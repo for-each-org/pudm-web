@@ -27,8 +27,28 @@ const getNotifications = () => {
         })
         .catch(error => reject(error));    
     });
-}
+};
+
+/**
+ * Function returns a promise that fetches groups 
+ * from firebase and resolves it as a list
+ */
+const getGroups = () => {
+    //ASSUMPTION : The groups are stored perfectly as an array in firebase
+    return new Promise((resolve, reject) => {
+        database.ref(schema.groups).once('value')
+        .then((snapshot) => {
+            const groups = snapshot.val();
+            if(!Array.isArray(groups)) {
+                reject("Groups is not stored as an array in firebase");
+            }
+            resolve(groups);
+        })
+        .catch(error => reject(error));    
+    });
+};
 
 export default {
     getNotifications,
+    getGroups,
 }
