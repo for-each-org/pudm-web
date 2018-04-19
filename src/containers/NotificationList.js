@@ -10,6 +10,8 @@ export default class NotificationList extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         //TODO: Check if old props match current props, if they do, don't update
+
+        return true //TEMPORARY
     }
 
     render() {

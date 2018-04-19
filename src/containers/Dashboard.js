@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import NotificationEditor   from './NotificationEditor';
+import NotificationList     from './NotificationList';
+import db                   from '../db';
 
 export default class Dashboard extends Component {
     constructor(props) {
@@ -17,22 +20,44 @@ export default class Dashboard extends Component {
     }
     
     componentWillMount() {
-        //TODO: fectch data from API and fill state
+
+        //Get list of groups
+        db.getGroups()
+        .then(res => {
+            this.setState({
+                groups: res
+            });
+        })
+        .catch(error => {
+            //TODO handle error
+            console.log(error);
+        });
+
+        //Get list of notifications
+        db.getNotifications()
+        .then(res => {
+            this.setState({
+                notifications: res
+            });
+        })
+        .catch(error => {
+            //TODO handle error
+            console.log(error);
+        });
     }
 
     onClickNotificationListItem(notif_id) {
         //Populate form with notification details
+        const notif = this.state.notifications.notif_id;
         this.setState(prev => (
-            const notif = this.state.notifications.notif_id;
-            {
-            form: {
+            {form: {
                 id: notif_id,
                 textfield: notif.content,
                 time: notif.time,
                 group: notif.group,
                 edit: true
-            }
-        });
+            }}
+        ));
     }
 
     onSubmitForm(notif_obj) {
@@ -42,22 +67,22 @@ export default class Dashboard extends Component {
 
         //Reset Form
         this.setState(prev => (
-            const notif = this.state.notifications.notif_id;
-            {
-            form: {
+            {form: {
                 id: null,
                 textfield: "",
                 time: null,
                 group: null,
                 edit: false
-            }
-        });
+            }}
+        ));
 
     }
 
     render() {
         return(
-            <div/>
+            <div>
+                <NotificationEditor group_list={this.state.groups}/>
+            </div>
         )
     }
  }

@@ -1,7 +1,3 @@
-import NotificationEditor from './NotificationEditor';
-import NotificationList from './NotificationList';
+import Dashboard from './Dashboard';
 
-export default {
-    NotificationEditor,
-    NotificationList
-};
+export default Dashboard
