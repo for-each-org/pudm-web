@@ -56,7 +56,7 @@ export default class NotificationEditor extends Component {
         return (
             <div>
                 <TextField content={this.state.textfield} updateContent={this.onTextFieldChange.bind(this)}/>
-                <GroupSelector group_list={grp} selectGroup={this.onGroupSelectorChange.bind(this)}/>
+                <GroupSelector group_list={this.state.group} selectGroup={this.onGroupSelectorChange.bind(this)}/>
             </div>
         )
     }

@@ -1,4 +1,5 @@
 import * as firebase from 'firebase'
+
 var config = {
     apiKey: "AIzaSyCpSftMSIMYXDOaX92CkOL_QgrXyiqex1c",
     authDomain: "pudm-server.firebaseapp.com",
@@ -6,7 +7,8 @@ var config = {
     projectId: "pudm-server",
     storageBucket: "pudm-server.appspot.com",
     messagingSenderId: "1021440757187"
-  };
-  firebase.initializeApp(config);
-}
+};
+
+firebase.initializeApp(config);
+
 export default firebase;

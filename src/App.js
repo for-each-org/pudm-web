@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import components from './components';
 import container from './containers';
+import db from './db/db_comm';
 
 class App extends Component {
     render() {
