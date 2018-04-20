@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import TextField            from '../components/form/Textfield';
-import GroupSelector        from '../components/form/GroupSelector';
-import utils                from '../utils';
+import components           from '../components';
 
 export default class NotificationEditor extends Component {
     constructor(props) {
@@ -57,8 +55,11 @@ export default class NotificationEditor extends Component {
         //Will have TextField, TimePicker, DatePicker, GroupSelector, Button
         return (
             <div>
-                <TextField content={this.state.textfield} updateContent={this.onTextFieldChange}/>
-                <GroupSelector group_list={this.props.group_list} selectGroup={this.onGroupSelectorChange}/>
+                <components.form.TextField content={this.state.textfield} updateContent={this.onTextFieldChange}/>
+                <components.form.GroupSelector group_list={this.props.group_list} selectGroup={this.onGroupSelectorChange}/>
+                <components.form.Button display_name="submit" onClick={this.onSubmit}/>
+                <components.form.DatePicker date={this.state.date} onChange={this.onDatePickerChange}/>
+                <components.form.TimePicker time={this.state.time} onChange={this.onTimePickerChange}/>
             </div>
         )
     }

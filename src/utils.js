@@ -12,9 +12,9 @@ function getTimeString(unix_time) {
 
 function getDateString(unix_time) {
     const date = unixToDate(unix_time);
-    const day   = ("0" + date.getDay()).slice(-2);
-    const month = ("0" + date.getMonth()).slice(-2);
-    const year  = ("0" + date.getFullYear()).slice(-4);
+    const day   = ("0" + date.getDate()).slice(-2);
+    const month = ("0" + (date.getMonth() + 1)).slice(-2);
+    const year  = date.getFullYear();
     return year + "-" + month + "-" + day;
 }
 

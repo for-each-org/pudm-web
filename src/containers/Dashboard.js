@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NotificationEditor   from './NotificationEditor';
 import NotificationList     from './NotificationList';
+import utils                from '../utils';
 import db                   from '../db';
 
 export default class Dashboard extends Component {
@@ -78,10 +79,34 @@ export default class Dashboard extends Component {
 
     }
 
+    getTime() {
+        const unix = Math.round(+new Date()/1000);
+        if (this.state.time) {
+            return utils.getTimeString(this.state.form.time)
+        } else {
+            return utils.getTimeString(unix);
+        }
+    }
+
+    getDate() {
+        const unix = Math.round(+new Date()/1000);
+        if (this.state.time) {
+            return utils.getDateString(this.state.form.time)
+        } else {
+            return utils.getDateString(unix);
+        }
+    }
+
     render() {
         return(
             <div>
-                <NotificationEditor group_list={this.state.groups}/>
+                <NotificationEditor 
+                    group_list={this.state.groups} 
+                    id={this.state.form.id}
+                    textfield={this.state.form.textfield}
+                    time={this.getTime()}
+                    date={this.getDate()}
+                    edit={this.state.form.edit} />
             </div>
         )
     }
