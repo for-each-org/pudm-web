@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import TextField from '../components/form/Textfield';
-import GroupSelector from '../components/form/GroupSelector';
+import TextField            from '../components/form/Textfield';
+import GroupSelector        from '../components/form/GroupSelector';
+import utils                from '../utils';
 
 export default class NotificationEditor extends Component {
     constructor(props) {
