@@ -23,9 +23,11 @@ export default class NotificationEditor extends Component {
     }
 
     onDatePickerChange = (event) => {
+        this.setState({date: event.target.value});
     }
 
     onTimePickerChange = (event) => {
+        this.setState({time: event.target.value});
     }
 
     onSubmit = () => {
@@ -55,11 +57,25 @@ export default class NotificationEditor extends Component {
         //Will have TextField, TimePicker, DatePicker, GroupSelector, Button
         return (
             <div>
-                <components.form.TextField content={this.state.textfield} updateContent={this.onTextFieldChange}/>
-                <components.form.GroupSelector group_list={this.props.group_list} selectGroup={this.onGroupSelectorChange}/>
-                <components.form.Button display_name="submit" onClick={this.onSubmit}/>
-                <components.form.DatePicker date={this.state.date} onChange={this.onDatePickerChange}/>
-                <components.form.TimePicker time={this.state.time} onChange={this.onTimePickerChange}/>
+                <components.form.TextField 
+                    content={this.state.textfield} 
+                    updateContent={this.onTextFieldChange}/>
+
+                <components.form.GroupSelector 
+                    group_list={this.props.group_list} 
+                    selectGroup={this.onGroupSelectorChange}/>
+
+                <components.form.Button 
+                    display_name="submit" 
+                    onClick={this.onSubmit}/>
+
+                <components.form.DatePicker 
+                    date={this.state.date} 
+                    onChange={this.onDatePickerChange}/>
+
+                <components.form.TimePicker 
+                    time={this.state.time} 
+                    onChange={this.onTimePickerChange}/>
             </div>
         )
     }
