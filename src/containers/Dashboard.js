@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
                 id: null,
                 textfield: "",
                 time: null,
-                group: null,
+                group: 0,
                 edit: false //to know whether the notification is new or an old one is being edited
             }
         }
@@ -61,7 +61,7 @@ export default class Dashboard extends Component {
         ));
     }
 
-    onSubmitForm(notif_obj) {
+    onSubmitForm = (notif_obj) => {
         //TODO : Communicate with server
         
         //TODO : display confirmation of submission of form
@@ -72,7 +72,7 @@ export default class Dashboard extends Component {
                 id: null,
                 textfield: "",
                 time: null,
-                group: null,
+                group: 0,
                 edit: false
             }}
         ));
@@ -106,7 +106,9 @@ export default class Dashboard extends Component {
                     textfield={this.state.form.textfield}
                     time={this.getTime()}
                     date={this.getDate()}
-                    edit={this.state.form.edit} />
+                    group={this.state.form.group}
+                    edit={this.state.form.edit} 
+                    onSubmit={this.onSubmitForm}/>
             </div>
         )
     }
