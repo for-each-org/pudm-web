@@ -52,7 +52,7 @@ export default class Dashboard extends Component {
         this.setState(prev => (
             {form: {
                 id: notif.id,
-                textfield: notif.textfield,
+                textfield: notif.content,
                 time: notif.time,
                 group: notif.group,
                 edit: true
@@ -62,7 +62,6 @@ export default class Dashboard extends Component {
 
     onSubmitForm = (notif_obj) => {
         //TODO : Communicate with server
-        
         //TODO : display confirmation of submission of form
 
         //Reset Form
@@ -80,7 +79,7 @@ export default class Dashboard extends Component {
 
     getTime() {
         const unix = Math.round(+new Date()/1000);
-        if (this.state.time) {
+        if (this.state.form.time) {
             return utils.getTimeString(this.state.form.time)
         } else {
             return utils.getTimeString(unix);
@@ -89,7 +88,7 @@ export default class Dashboard extends Component {
 
     getDate() {
         const unix = Math.round(+new Date()/1000);
-        if (this.state.time) {
+        if (this.state.form.time) {
             return utils.getDateString(this.state.form.time)
         } else {
             return utils.getDateString(unix);

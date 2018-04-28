@@ -16,6 +16,6 @@ export default function GroupSelector(props) {
         <option key={idx} value={idx}>{group_name}</option>
     );
     return (
-        <select onChange={props.selectGroup}>{listGroups}</select>
+        <select value={props.group} onChange={props.selectGroup}>{listGroups}</select>
     )
 }

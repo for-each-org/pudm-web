@@ -1,5 +1,5 @@
 import React from 'react';
-
+import utils from '../../utils';
 /**
  * props: {
  * notification: {
@@ -23,7 +23,7 @@ export default function ListElement(props) {
                 Status: {props.notification.status ? 'Sent' : 'Pending'}
             </div>
             <div>
-                Time: {new Date(props.notification.time).toLocaleString()}
+                Time: {utils.getDateString(props.notification.time) + " " + utils.getTimeString(props.notification.time)}
             </div>
             <div>
                 Group {props.groups[props.notification.group]}
