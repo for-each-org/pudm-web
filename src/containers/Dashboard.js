@@ -62,7 +62,6 @@ export default class Dashboard extends Component {
 
     onSubmitForm = (notif_obj) => {
         //TODO : Communicate with server
-        console.log(notif_obj);
         //TODO : display confirmation of submission of form
 
         //Reset Form

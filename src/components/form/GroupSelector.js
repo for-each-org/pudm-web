@@ -13,9 +13,9 @@ import React from 'react';
 export default function GroupSelector(props) {
     const group_list = props.group_list ? props.group_list : [];
     const listGroups = group_list.map((group_name, idx) =>
-        <option key={idx} value={idx} selected={idx == props.group}>{group_name}</option>
+        <option key={idx} value={idx}>{group_name}</option>
     );
     return (
-        <select onChange={props.selectGroup}>{listGroups}</select>
+        <select value={props.group} onChange={props.selectGroup}>{listGroups}</select>
     )
 }
