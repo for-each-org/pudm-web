@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import components           from '../components';
+import utils from '../utils';
 
 export default class NotificationEditor extends Component {
     constructor(props) {
@@ -31,18 +32,15 @@ export default class NotificationEditor extends Component {
     }
 
     onSubmit = () => {
-        //TODO convert date and time to be stored in a key [time] as UNIX time
 
-        /* create form object that has
-        *form = {
-        *   id: state.id,
-        *   textfield: state.textfield,
-        *   time: (UNIX time)(state.date + state.time),
-        *   group: state.group
-        *}
-        */
+        const form = {
+            id: this.state.id,
+            textfield: this.state.textfield,
+            time: utils.dateTimeToUnix(this.state.date, this.state.time),
+            group: this.state.group,
+        };
 
-        // props.onSubmit(form)
+        this.props.onSubmit(form)
     }
 
     shouldComponentUpdate(nextProps, nextState) {
