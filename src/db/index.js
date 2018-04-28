@@ -5,7 +5,7 @@ const database = firebase.database(); //access the database from firebase
 
 /**
  * Function returns a promise that fetches notifications 
- * from firebase and resolves it as a list
+ * from firebase and resolves it as a list, sorted by time descending
  */
 const getNotifications = () => {
     return new Promise((resolve, reject) => {
@@ -22,6 +22,12 @@ const getNotifications = () => {
                     );
                 }
             }
+
+            notifications.sort((a, b) => {
+                if (a.time > b.time) return -1;
+                if (a.time < b.time) return 1;
+                return 0;
+            });
             
             resolve(notifications);
         })
