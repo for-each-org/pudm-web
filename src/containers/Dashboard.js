@@ -49,10 +49,13 @@ export default class Dashboard extends Component {
 
     onClickNotificationListItem = (notif) => {
         //Populate form with notification details
+        console.log("clicked");
+        console.log(this.state);
+        console.log(notif);
         this.setState(prev => (
             {form: {
                 id: notif.id,
-                textfield: notif.textfield,
+                textfield: notif.content,
                 time: notif.time,
                 group: notif.group,
                 edit: true
