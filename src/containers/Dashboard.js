@@ -14,7 +14,7 @@ export default class Dashboard extends Component {
                 id: null,
                 textfield: "",
                 time: null,
-                group: null,
+                group: 0,
                 edit: false //to know whether the notification is new or an old one is being edited
             }
         }
@@ -72,7 +72,7 @@ export default class Dashboard extends Component {
                 id: null,
                 textfield: "",
                 time: null,
-                group: null,
+                group: 0,
                 edit: false
             }}
         ));
