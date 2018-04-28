@@ -15,7 +15,7 @@ import React from 'react';
 
 export default function ListElement(props) {
     return (
-        <div>
+        <div onClick={props.onClick}>
             <div>
                 Content: {props.notification.content}
             </div>
