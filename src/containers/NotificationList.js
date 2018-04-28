@@ -1,22 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import components           from '../components';
 
-export default class NotificationList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            notifications: props.notifications
-        }
-    }
-
-    shouldComponentUpdate(nextProps, nextState) {
-        //TODO: Check if old props match current props, if they do, don't update
-
-        return true //TEMPORARY
-    }
-
-    render() {
-        return (
-            <div/>
-        )
-    }
+export default function NotificationList(props) {
+    const listItems = props.notifications ? props.notifications.map((notification) =>
+        <li key={notification.id}>
+            <components.notifications.ListElement 
+            notification={notification} 
+            groups={props.groups} 
+            onClick={props.onClick.bind(null, notification)}/>
+        </li>
+    ) : [];
+    return (
+        <ul>{listItems}</ul>
+    );
 }

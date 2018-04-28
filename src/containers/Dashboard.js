@@ -47,13 +47,12 @@ export default class Dashboard extends Component {
         });
     }
 
-    onClickNotificationListItem(notif_id) {
+    onClickNotificationListItem = (notif) => {
         //Populate form with notification details
-        const notif = this.state.notifications.notif_id;
         this.setState(prev => (
             {form: {
-                id: notif_id,
-                textfield: notif.content,
+                id: notif.id,
+                textfield: notif.textfield,
                 time: notif.time,
                 group: notif.group,
                 edit: true
@@ -109,6 +108,11 @@ export default class Dashboard extends Component {
                     group={this.state.form.group}
                     edit={this.state.form.edit} 
                     onSubmit={this.onSubmitForm}/>
+
+                <NotificationList 
+                    notifications={this.state.notifications} 
+                    groups={this.state.groups} 
+                    onClick={this.onClickNotificationListItem}/>
             </div>
         )
     }
