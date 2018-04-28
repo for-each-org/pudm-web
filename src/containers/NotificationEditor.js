@@ -68,6 +68,7 @@ export default class NotificationEditor extends Component {
 
                 <components.form.GroupSelector 
                     group_list={this.props.group_list} 
+                    group={this.state.group}
                     selectGroup={this.onGroupSelectorChange}/>
 
                 <components.form.Button 
