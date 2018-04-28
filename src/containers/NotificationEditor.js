@@ -43,12 +43,17 @@ export default class NotificationEditor extends Component {
         this.props.onSubmit(form)
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        //TODO: Check if old props match current props, if they do, don't update
-        //If they don't, see if there is any field in the form that was filled out. 
-        //If there was, prompt a question asking whether or not they want to start over
-        
-        return true; //TEMPORARY
+    componentWillReceiveProps(nextProps) {
+        if(this.props.id && this.props.id !== nextProps.id) {
+            this.setState({
+                id: nextProps.id,
+                textfield: nextProps.textfield, 
+                time: nextProps.time,
+                date: nextProps.date,
+                group: nextProps.group, 
+                edit: nextProps.edit 
+            });
+        }
     }
 
     render() {
