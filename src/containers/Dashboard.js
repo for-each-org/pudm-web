@@ -107,6 +107,8 @@ export default class Dashboard extends Component {
                     time={this.getTime()}
                     date={this.getDate()}
                     edit={this.state.form.edit} />
+                    
+                <NotificationList notifications={this.state.notifications} groups={this.state.groups}/>
             </div>
         )
     }
