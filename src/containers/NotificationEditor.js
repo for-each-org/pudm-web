@@ -44,8 +44,6 @@ export default class NotificationEditor extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log("changed");
-        console.log(nextProps);
         if(this.props.id && this.props.id !== nextProps.id) {
             this.setState({
                 id: nextProps.id,

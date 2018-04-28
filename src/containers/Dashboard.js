@@ -49,9 +49,6 @@ export default class Dashboard extends Component {
 
     onClickNotificationListItem = (notif) => {
         //Populate form with notification details
-        console.log("clicked");
-        console.log(this.state);
-        console.log(notif);
         this.setState(prev => (
             {form: {
                 id: notif.id,
@@ -65,7 +62,7 @@ export default class Dashboard extends Component {
 
     onSubmitForm = (notif_obj) => {
         //TODO : Communicate with server
-        
+        console.log(notif_obj);
         //TODO : display confirmation of submission of form
 
         //Reset Form
